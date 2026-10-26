@@ -7,7 +7,7 @@ public:
 
   // Constructor: Taking a pointer to an array of long ints and its
   // size, it sets up the simulated memory with the appropriate header
-  // information
+  // information.
   freeList( long int*, int size );
 
   // reserve_space: Taking a size as the number of long int's (note
@@ -15,15 +15,13 @@ public:
   // addressable location does not contain bytes (8 bits), but long
   // ints (64 bits, or 8 bytes).
 
-  // It returns the address of the allocation space, which is 2 spots
-  // AFTER the head of the chunk because those two are in the header
-  // and hold the meta data. Make sure to update head to not just the
+  // It returns the address of the allocation space, which is 2 long
+  // ints AFTER the header because those two hold the meta data. 
+  // Make sure to update the head pointer to not just the
   // size but two more to account for this overhead.
-  // Also, make sure to update the value at head to reflect the
-  // updated amount of space after size has been allocated.
   
   // NOTE: if you add 4 to head, which is a pointer, the program will
-  // alsomatically convert that 4 to 32 because a 4 long int jump is
+  // automatically convert that 4 to 32 because it is
   // equizalent to 32 bytes (4x64 bits = 4x8bytes = 32)
   long int* reserve_space( int size );
 
