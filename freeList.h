@@ -37,9 +37,11 @@ public:
   // the header.
   void free_space( long int* pntr );
 
-  // Manipulate the RAM so that chunks that are continuous are
-  // coalesced. This function for NOT find pieces that are BEFORE each
-  // chunk, however.
+  // Manipulate the RAM so that it coalesces chunks when are immediately 
+  // following another. This function only looks forward and does NOT 
+  // find chunks that precede the one under consideration, however.
+  // Think of this function as being able to traverse down a linked list
+  // but cannot go backwards.
   void coalesce_forward();
 
   // the print function is given to you that outputs the contents of
